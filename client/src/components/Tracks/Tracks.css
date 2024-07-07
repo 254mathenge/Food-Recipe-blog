@@ -10,6 +10,16 @@
     margin:1rem auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+@media screen and (max-width:1300px) {
+    .tracks-card-section{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+ }
 .tracks-card{
 
     display:flex;
@@ -19,6 +29,16 @@
     flex-wrap:wrap;
 
 } 
+@media screen and (max-width:1300px) {
+    .tracks-card{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap:1rem;
+    }
+ }
 
 .tracks-image{
     width:400px;
