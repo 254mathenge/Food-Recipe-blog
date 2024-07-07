@@ -1,0 +1,52 @@
+
+.about-section{
+/* border:2px solid red; */
+display:flex;
+justify-content:center;
+align-items:center;
+gap:1rem;
+max-width:90vw;
+margin:0.5rem auto;
+}
+.about-text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    border:1px solid black;
+    /* padding:1rem; */
+}
+.about-text-title{
+    width:40vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    padding:1rem;
+    font-weight: 400;
+    font-size:1.5rem; 
+    line-height:2rem
+}
+
+.about-image1{
+    width:300px;
+    height:470px;
+}
+.about-title{
+    display:flex;
+    /* flex-direction:column; */
+    justify-content:center;
+    align-items:center;
+    margin:1rem;
+    font-size:2rem;
+    text-decoration:underline;
+    text-decoration-color:black;
+}
+.about-images{
+    display:flex;
+    /* flex-direction:column; */
+    justify-content:center;
+    align-items:center;
+    gap:0.5rem;
+}

@@ -1,0 +1,66 @@
+
+
+
+
+.tracks-card-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin:1rem auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.tracks-card{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4rem;
+    flex-wrap:wrap;
+
+} 
+
+.tracks-image{
+    width:400px;
+    height:250px;
+    border-radius:15px;
+    padding:0.5rem;
+}
+.tracks-title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.7rem;
+    font-weight:600;
+}
+.tracks-title1{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    font-weight:600;
+    text-decoration:underline;
+    text-decoration-color:black  
+}
+.tracks-name{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+    font-weight:600;
+    /* border-radius:15px;
+    background-color:black;
+    color:white;
+    padding:0.5rem;
+    margin:auto; */
+
+}
+.tracks-text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:400px;
+    padding:0.5rem;
+    font-size:1rem;
+    font-weight:500; 
+}

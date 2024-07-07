@@ -1,0 +1,72 @@
+
+
+.hero-card-section{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background-color:rgba(226, 223, 223, 0.932);
+/* gap:1rem; */
+width:350px;
+height:500px;
+border-radius: 15px;
+max-width:100%;
+margin: 1rem;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.hero-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem
+}
+.hero-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+}
+.hero-card-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    height:350px;
+    margin-top: 1rem;
+    border-radius:15px;
+   object-fit: cover; 
+}
+.hero-image{
+    width:300px;
+    height:350px;
+    border-radius:15px; 
+
+}
+.hero-card-title{
+    background-color:black;
+    padding:0.5rem;
+    margin:0 auto;
+    border-radius:15px;
+    color:white
+
+}
+.hero-card-text{
+    display: flex;
+    /* justify-content: center;
+    align-items: center;  */
+    flex-direction:column;
+    text-align:center;
+    font-weight:400;
+    /* line-height:2; */
+    /* margin-bottom:0.5rem; */
+    padding:0 0.5rem;
+}
+.hero-card-text-blogger{
+    display: flex;
+    /* justify-content: center;
+    align-items: center;  */
+    flex-direction:column;
+    text-align:center;
+    font-weight:600;
+    padding:0.5rem auto;
+}
