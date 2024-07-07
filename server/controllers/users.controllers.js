@@ -3,6 +3,8 @@ import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import SECRET_KEY from "dotenv"
 const prisma = new PrismaClient();
+
+//create  a  new user
 export const createUser = async (req, res) => {
     console.log(req.body)
     try {
@@ -117,14 +119,13 @@ export const deleteUser = async (req, res) => {
             }
 
         })
-        res.status(200).json(deleteProducts)
+        res.status(200).json(deleteUser)
     } 
     catch (error) {
         res.status(500).json({success:false ,message:error.message})
   }
 }
 export const loginUser = async (req, res) => {
-    console.log(req.body)
     const { emailAddress, password } = req.body;
     try {
         const user = await prisma.user.findFirst({
@@ -135,16 +136,12 @@ export const loginUser = async (req, res) => {
         if (user) {
             const passwordMatch = bcrypt.compareSync(password, user.password)
             if (passwordMatch === true) {
-                const payload = {
-                    userid:user.id,
-                    firstName:user.firstName,
-                    lastName:user.lastName,
-                    emailAddress: user.emailAddress,
-                    phone:user.phone
-                }
-                const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "96h" })
+               
+                const token = jwt.sign({userid:user.userid}, process.env.SECRET_KEY, { expiresIn: "96h" })
+
                 res.cookie("access_token", token)
-                res.status(200).json({success:true,data:payload})
+
+                res.status(200).json({ success: true, data: { ...user,token} })
             } else {
                 return res.status(400).json({ success: false, message: "Invalid email or password" })
     

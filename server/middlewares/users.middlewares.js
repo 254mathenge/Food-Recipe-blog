@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
  
-export const validateInformation = async(res, req, next) => {
+export const validateInformation = async (res, req, next) => {
     const { firstName, lastName, emailAddress, password, phone } = req.body;
 
     if (!firstName) return res.status(400).json({ success: false, message: "firstName is required" })

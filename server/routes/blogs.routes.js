@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import {authenticateUser} from "../middlewares/auth.middleware.js"
 
 // import {getAllBlogs} from "../controllers/blogs.controllers.js";
 
@@ -39,15 +39,18 @@ router.get("/:id",async(req, res) => {
 }
 )
 
-router.post("/", async (req, res) => {
+router.post("/",authenticateUser, async (req, res) => {
+    console.log("user req",req.user)
+
     try {
-        const { title, content, createdAt, authorId } = req.body;
+
+        const { title, content, createdAt } = req.body;
         const newBlog = await prisma.blog.create({
             data: {
                 title: title,
                 content: content,
-                createdAt: createdAt,
-                authorId: authorId
+                authorId: req.user.userid,
+                createdAt: createdAt
             }
         })
         res.status(201).json(newBlog)
@@ -57,7 +60,7 @@ router.post("/", async (req, res) => {
     }
 })
 
-router.patch("/:id", async (req, res) => {
+router.patch("/:id",authenticateUser, async (req, res) => {
     const { title, content, createdAt, authorId } = req.body;
     const id = req.params.id
 
@@ -106,7 +109,7 @@ router.patch("/:id", async (req, res) => {
 
 })
 
-router.delete("/:id",async (req, res) => {
+router.delete("/:id",authenticateUser,async (req, res) => {
     const id = req.params.id
     try {
         const deleteBlog = await prisma.blog.delete({
