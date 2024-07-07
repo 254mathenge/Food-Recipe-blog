@@ -12,6 +12,16 @@
     margin:2rem;
      
 }
+@media screen and (max-width:1300px) {
+    .blog-card-sections{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+ }
 .blog-card{
     display:flex;
     justify-content:center;
@@ -19,6 +29,16 @@
     flex-wrap:wrap; 
     gap:4rem;
 }
+@media screen and (max-width:1300px) {
+    .blog-card{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap:1rem;
+    }
+ }
 .blog-image{
    
 height:auto;
