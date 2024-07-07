@@ -8,7 +8,16 @@
     width:250px;
     height :250px;
 }
-
+@media screen and (max-width:1300px) {
+   .testimonials-card-section{
+       display: flex;
+       flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     
+   }
+}
 .testimonial-image{
     display:flex;
     justify-content:center;
