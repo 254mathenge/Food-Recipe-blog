@@ -7,6 +7,7 @@ import pizzahero from "../../assets/pizzahero.jpg"
 
 const hero = [
     {
+        
        image: pizzahero,
         title: "Pepperoni Pizza",
         text: "Our delicious, organic, and locally sourced ingredients are made with love and care.",

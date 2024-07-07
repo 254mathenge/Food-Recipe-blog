@@ -1,6 +1,6 @@
-// backend/middleware/auth.js
+
 import jwt from "jsonwebtoken";
-const secret = process.env.SECRET_KEY // Use the same secret as above
+const secret = process.env.SECRET_KEY
 
 export const authenticateUser = (req, res, next) => {
     const token = req.header('Authorization')?.split(' ')[1];
@@ -12,8 +12,8 @@ export const authenticateUser = (req, res, next) => {
             return res.sendStatus(403).json({info:"User must be logged in first"});
         }
 
-        console.log("the autenticated user : ", user)
-        req.user = user; //contains userid and autherId only
+        console.log("the authenticated user : ", user)
+        req.user = user;
         next();
     });
 };

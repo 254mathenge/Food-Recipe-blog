@@ -26,12 +26,12 @@ function Login() {
       });
       
       const data = await response.json()
-      // setLoading(false)
+     
       console.log(data)
       if (response.status === 200) {
-        //save the jwt token to the local storage for use in other requests
+       
         localStorage.setItem('token', data.data.token);
-        //redirect to /blogs
+        
         navigate("/Create")
      }else{
       setError(data.message)

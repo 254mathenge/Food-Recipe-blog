@@ -28,7 +28,7 @@ function CreateBlog() {
 
       const data = await response.json();
       console.log(data);
-      setLoading(falsnpm e);
+      setLoading(false);
 
       if (response.ok) {
         navigate("/Blog");
