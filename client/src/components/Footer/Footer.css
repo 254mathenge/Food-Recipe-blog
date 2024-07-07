@@ -2,6 +2,16 @@
     background-color:black;
     color :white;
 }
+@media screen and (max-width:1300px) {
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+ }
 .footer-section{
     display:flex;
     justify-content:space-between;
@@ -13,6 +23,16 @@
 
 
 }
+@media screen and (max-width:1300px) {
+    .footer-section{
+        display: flex;
+        flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+ }
     .footer-logo{
         display:flex;
         justify-content:center;
