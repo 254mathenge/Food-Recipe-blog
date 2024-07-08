@@ -11,8 +11,9 @@ app.use(cors({
   origin: "http://localhost:5173",
   methods: ["POST", "GET", "DELETE", "PATCH"]
 }));
-app.use(express.urlencoded({extended: true }));
+
 app.use(express.json());
+app.use(express.urlencoded({extended: true }));
 app.use("/users",usersRouter);
 app.use("/blogs", blogsRouter);
 

@@ -4,7 +4,8 @@ import jwt from "jsonwebtoken";
 import SECRET_KEY from "dotenv"
 const prisma = new PrismaClient();
 
-//create  a  new user
+
+
 export const createUser = async (req, res) => {
     console.log(req.body)
     try {

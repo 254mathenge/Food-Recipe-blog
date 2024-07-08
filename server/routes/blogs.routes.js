@@ -3,6 +3,15 @@ import {authenticateUser} from "../middlewares/auth.middleware.js"
 
 // import {getAllBlogs} from "../controllers/blogs.controllers.js";
 
+// router.get('/blogs', async (req, res) => {
+//   try {
+//       const blogs = await Blog.find();
+//       res.json(blogs);
+//   } catch (err) {
+//       res.status(500).json({ message: err.message });
+//   }
+// });
+
 
 const router = Router();
 
@@ -14,7 +23,7 @@ const prisma = new PrismaClient();
 router.get("/",async(req, res) => {
     const id = req.params.id
     try {
-        const blogs = await prisma.blog.findFirst({
+        const blogs = await prisma.blog.findMany({
             where: {
                 id: id
             }

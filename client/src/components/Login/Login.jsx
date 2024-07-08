@@ -34,7 +34,7 @@ function Login() {
         
         navigate("/Create")
      }else{
-      setError(data.message)
+      setError(error.message)
     }
 
     } catch (error) {

@@ -20,10 +20,9 @@ function Form() {
       });
       alert("Sign Up Successful");
       const data = await response.json()
-      setLoading(false)
+      
       console.log(data)
       if (response.status === 201) {
-
         navigate("/SignIn")
      }else{
       setError(data.message)
@@ -32,6 +31,8 @@ function Form() {
     } catch (error) {
       alert("Failed to Sign Up");
       console.error(error);
+    } finally {
+      setLoading(false)
     }
   }
   

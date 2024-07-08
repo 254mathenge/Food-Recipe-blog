@@ -13,15 +13,14 @@ function CreateBlog() {
     console.log("submitting");
     setLoading(true);
     setError("");
-    
-    const token = localStorage.getItem('token');
+
+    const token = localStorage.getItem("token");
     try {
-      
       const response = await fetch("http://localhost:3000/blogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          'Authorization' : `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(values),
       });
@@ -31,6 +30,7 @@ function CreateBlog() {
       setLoading(false);
 
       if (response.ok) {
+        alert("blog created sucessful");
         navigate("/Blog");
       } else {
         setError(data.message);
@@ -50,9 +50,6 @@ function CreateBlog() {
     initialValues: {
       title: "",
       content: "",
-
-      
-
     },
     onSubmit: (values) => {
       console.log("Trying to log in the user");
