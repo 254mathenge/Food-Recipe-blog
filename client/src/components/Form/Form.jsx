@@ -4,37 +4,42 @@ import * as Yup from "yup";
 import "./Form.css";
 import { Link , useNavigate } from "react-router-dom";
 import { useState } from "react";
+// import { ToastContainer, toast } from 'react-toastify';
+//   import 'react-toastify/dist/ReactToastify.css';
 function Form() {
-  const [ loading, setLoading ] = useState(false)
-  const [error, setError] = useState(false)
+  
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
   const navigate = useNavigate();
+  // const notify = () =>{
   const handleSubmit = async (formState) => {
     console.log("submitting")
     setLoading(true)
     setError(false)
-    try {
-      const response = await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
-      });
-      alert("Sign Up Successful");
-      const data = await response.json()
+    
+      try {
+        const response = await fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formState),
+        });
       
-      console.log(data)
-      if (response.status === 201) {
-        navigate("/SignIn")
-     }else{
-      setError(data.message)
-    }
+        const data = await response.json()
+        // toast("Sign Up Successful");
+        console.log(data)
+        if (response.status === 201) {
+          navigate("/SignIn")
+        } else {
+          setError(data.message)
+        }
 
-    } catch (error) {
-      alert("Failed to Sign Up");
-      console.error(error);
-    } finally {
-      setLoading(false)
+      } catch (error) {
+        // toast("Sign Up failed");
+        console.error(error);
+      } finally {
+        setLoading(false)
+      }
     }
-  }
   
   const ValidationSchema = Yup.object({
     firstName: Yup.string("name must be string").required("field is required"),
@@ -138,9 +143,10 @@ function Form() {
               onBlur={formik.handleBlur}
             />{formik.touched.phone && formik.errors.phone&& <p>{formik.errors.phone}</p>}
           </div>
-          <button type="submit" className="submit" disabled={loading}>{loading ? "please wait..." : " Submit"}
-           
+          <button type="submit" className="submit"  disabled={loading}>{loading ? "please wait..." : " Submit"}
           </button>
+          {/* onClick={notify}
+          <ToastContainer /> */}
           <div>
             <p className="sign-in-text">
               Already have an Account?? <Link to="/SignIn">SignIn</Link>

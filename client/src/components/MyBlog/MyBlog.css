@@ -4,6 +4,11 @@
     border:1px solid black;
     
 } */
+ .blogs-title{
+    display:flex;
+    justify-content:center;
+    align-items:center; 
+ }
 .blog-card-sections{
     
     display:flex;
@@ -11,7 +16,7 @@
     align-items:center;
     flex-direction:column;
     margin:2rem;
-     
+   
 }
 @media screen and (max-width:1300px) {
     .blog-card-sections{
@@ -23,15 +28,16 @@
       
     }
  }
-.blog-card{
+.blogs-card{
     display:flex;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap; 
     gap:4rem;
+    
 }
 @media screen and (max-width:1300px) {
-    .blog-card{
+    .blogs-card{
         display: flex;
         flex-wrap: wrap;
       flex-direction: row;
@@ -40,6 +46,18 @@
       gap:1rem;
     }
  }
+ .blog-text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    text-align: center;
+   width:270px;
+    font-weight:500;
+    font-size:1.2rem;
+   /* height: 150px; */
+    /* margin-top:1rem ; */
+}
 .blog-image{
    
 height:auto;
@@ -49,12 +67,12 @@ background-size:cover;
 background-position:center;
 }
 .blogs-details{
-    background-color:rgba(0, 0, 0, 0.89);
-    color:white;
+    background-color: white;
+    color:black;
     border-radius:15px;
-    max-width:400px;
+    width:300px;
+    height: 300px;
     border:2px solid black;
-    padding:1rem;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -65,22 +83,12 @@ background-position:center;
 .blog-name{
     
     text-align: center;
-    width: 350px;
+   
     font-weight:600;
     font-size:1.5rem;
     line-height:2rem;
 }
-.blog-text{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align: center;
-    max-width:350px;
-    font-weight:500;
-    font-size:1.2rem;
-    padding :1rem;
-    
-}
+
 .blogger{
     text-align: center;
     font-weight:600;
@@ -97,15 +105,17 @@ background-position:center;
     padding:0.2rem;
     border-radius:15px;
 }
-.blogs-title{
+.blog-title{
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:2rem;
     font-weight:600;
     margin:1rem;
-    text-decoration: underline;
-    text-decoration-color: black;
+   border-radius: 8px;
+    background-color:  black;
+    color: white;
+    /* margin: 0.5rem; */
 }
 .blogs-title2{
     display:flex;

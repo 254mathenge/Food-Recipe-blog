@@ -2,6 +2,7 @@ import bcrypt from "bcrypt"
 import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import SECRET_KEY from "dotenv"
+// import { useParams } from 'react-router-dom';
 const prisma = new PrismaClient();
 
 

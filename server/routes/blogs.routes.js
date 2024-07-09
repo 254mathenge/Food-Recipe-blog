@@ -1,5 +1,6 @@
 import { Router } from "express";
-import {authenticateUser} from "../middlewares/auth.middleware.js"
+import { authenticateUser } from "../middlewares/auth.middleware.js"
+// import { useParams } from 'react-router-dom';
 
 // import {getAllBlogs} from "../controllers/blogs.controllers.js";
 
@@ -130,7 +131,7 @@ router.delete("/:id",authenticateUser,async (req, res) => {
     try {
         const deleteBlog = await prisma.blog.delete({
             where: {
-                id:id
+                blogid:id
             },
             select: {
                 title: true,

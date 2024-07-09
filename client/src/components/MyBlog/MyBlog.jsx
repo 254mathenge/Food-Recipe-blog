@@ -10,16 +10,21 @@ import React, { useState, useEffect } from 'react';
 const BlogCard = ({ title, content}) => {
     return (
         <div className="blogs-card-section">
+            <div className="view-more">
+                    <Link to="/ViewMore"> View More <FaArrowRight /></Link>
+                </div>
             <div className="blogs-details">
-                <div className="blog-title">
+          <div className="blog-title">
                     <p className="blog-title">{title}</p>
                 </div>
-                <div className="blog-text">
-                    <p className="blog-text">{content}</p>
+                <div>
+                    <p className="blog-text">{content}<br/></p>
                 </div>
-                {/* <div className="blog-name">
-                    <p className="blog-name">{blog.author.firstName}</p>
-                </div> */}
+                <div className="blog-author">
+                    <p className="blog-author">By {authorFirstName}</p>
+                </div>
+                
+                
             </div>
         </div>
     );
@@ -38,7 +43,7 @@ function MyBlog() {
 
             try {
                 const response = await fetch('http://localhost:3000/blogs', {
-                    method: 'GET',
+                    method: 'GET' ,
                     headers: {
                         'Content-Type': 'application/json',
                         // 'Authorization': `Bearer ${token}`
@@ -72,10 +77,10 @@ function MyBlog() {
             <h2 className="blogs-title">Blogs</h2>
             <h3 className="blogs-title2">Recent Blog Posts</h3>
             <div className="blog-card-sections">
-                <div className="blog-card">
+                <div className="blogs-card">
                 {Array.isArray(blogs) ? (
                         blogs.map((blog, index) => (
-                            <BlogCard key={index} title={blog.title} content={blog.content} />
+                            <BlogCard key={index} title={blog.title} content={blog.content}  authorFirstName={blog.author.firstName} />
                         ))
                     ) : (
                         <p>No blogs available.</p>

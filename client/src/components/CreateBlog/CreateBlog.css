@@ -67,3 +67,16 @@
     margin-bottom: 10px;
     font-size: 14px;
 }
+.blog-text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    text-align: center;
+   width:800px;
+    font-weight:500;
+    font-size:1.2rem;
+   /* height: 150px; */
+    margin-top:1rem ;
+    height: 300px;
+}

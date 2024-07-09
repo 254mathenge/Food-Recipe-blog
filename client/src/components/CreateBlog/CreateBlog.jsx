@@ -79,13 +79,13 @@ function CreateBlog() {
         </div>
         <div>
           <label htmlFor="content">Content/Recipe:</label>
-          <textarea
+          <textarea className="blog-text"
             id="content"
             name="content"
             value={formik.values.content}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-          />
+          ></textarea>
           {formik.touched.content && formik.errors.content && (
             <p className="error">{formik.errors.content}</p>
           )}

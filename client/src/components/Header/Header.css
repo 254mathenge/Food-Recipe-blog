@@ -136,6 +136,9 @@ gap:1rem
     text-decoration: none;
 }
 .logout-button{
+    display:flex;
+align-items:center;
+justify-content:space-between;
     background-color: black;
     color: white;
     border-radius: 10px;
