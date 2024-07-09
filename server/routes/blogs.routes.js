@@ -41,12 +41,15 @@ router.get("/",async(req, res) => {
         res.status(500).json({success:false ,message:error.message})
   }
 })
-router.get("/:id",async(req, res) => {
-    const id = req.params.id
+router.get("/:authorid",async(req, res) => {
+    const authorid = req.params.authorid;
     try {
-        const blogs = await prisma.blog.findFirst({
+        const blogs = await prisma.blog.findMany({
             where: {
-                id: id
+                authorId: authorid
+            },
+            include: {
+                author: true
             }
         })
         res.status(200).json(blogs)

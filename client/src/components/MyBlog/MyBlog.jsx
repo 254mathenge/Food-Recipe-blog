@@ -7,7 +7,7 @@ import blog from "../../assets/blog image.jpg"
 import { FaArrowRight } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
-const BlogCard = ({ title, content}) => {
+const BlogCard = ({ title, content,authorFirstName}) => {
     return (
         <div className="blogs-card-section">
             <div className="view-more">
