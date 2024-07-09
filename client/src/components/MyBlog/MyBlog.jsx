@@ -7,7 +7,7 @@ import blog from "../../assets/blog image.jpg"
 import { FaArrowRight } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
-const BlogCard = ({ title, content,firstName }) => {
+const BlogCard = ({ title, content}) => {
     return (
         <div className="blogs-card-section">
             <div className="blogs-details">
@@ -17,9 +17,9 @@ const BlogCard = ({ title, content,firstName }) => {
                 <div className="blog-text">
                     <p className="blog-text">{content}</p>
                 </div>
-                <div className="blog-name">
-                    <p className="blog-name">{blog.author?.firstName}</p>
-                </div>
+                {/* <div className="blog-name">
+                    <p className="blog-name">{blog.author.firstName}</p>
+                </div> */}
             </div>
         </div>
     );
