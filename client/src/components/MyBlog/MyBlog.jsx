@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import "./MyBlog.css"
@@ -6,7 +7,7 @@ import blog from "../../assets/blog image.jpg"
 import { FaArrowRight } from "react-icons/fa";
 import React, { useState, useEffect } from 'react';
 
-const BlogCard = ({ title, content }) => {
+const BlogCard = ({ title, content,firstName }) => {
     return (
         <div className="blogs-card-section">
             <div className="blogs-details">
@@ -15,6 +16,9 @@ const BlogCard = ({ title, content }) => {
                 </div>
                 <div className="blog-text">
                     <p className="blog-text">{content}</p>
+                </div>
+                <div className="blog-name">
+                    <p className="blog-name">{blog.author?.firstName}</p>
                 </div>
             </div>
         </div>

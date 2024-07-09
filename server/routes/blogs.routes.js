@@ -26,7 +26,14 @@ router.get("/",async(req, res) => {
         const blogs = await prisma.blog.findMany({
             where: {
                 id: id
-            }
+            },
+            include: {
+                author: true,
+            },
+            orderBy: {
+                createdAt: "desc",
+            },
+            take: 10,
         })
         res.status(200).json(blogs)
     } catch (error) {

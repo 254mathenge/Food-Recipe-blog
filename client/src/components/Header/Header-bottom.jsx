@@ -11,8 +11,12 @@ function HeaderBottom() {
                     <li className="nav-list-link"><Link to="/MenuTracks">MenuTracks</Link></li>
                     <li className="nav-list-link"><Link to="/Blog">Blog</Link></li>
                     {/* <li className="nav-list-link"><Link to="/Create">Create</Link></li> */}
-                    <li className="nav-list-link"><Link to="/GetStarted">GetStarted</Link></li>
-                </ul>
+                <li className="nav-list-link"><Link to="/GetStarted">GetStarted</Link></li>
+               
+            </ul>
+            <div className="log-out">
+            <button id="logoutButton" className="log-out">Logout</button>
+            </div>
             </div>
             
     )

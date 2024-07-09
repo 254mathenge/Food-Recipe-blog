@@ -23,6 +23,7 @@ function App() {
             <Route path="/Create" element={<Create />} />
             <Route path="/GetStarted" element={<GetStarted />} /> 
             <Route path="/SignIn" element={<SignIn />} />  {/* Add SignIn component here */}
+         
           </Routes>
           <Footer />
         </BrowserRouter>
