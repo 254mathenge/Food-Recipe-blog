@@ -9,7 +9,8 @@ router.get("/:id",authenticateUser,getUserById)
 router.post("/" ,createUser) 
 router.patch("/:id",authenticateUser,updateUser )
 router.delete("/:id",authenticateUser, deleteUser)
-router.post("/login",loginUser)
+router.post("/login", loginUser)
+// router.get("/blogs/:authorid" ,authenticateUser )
 
 
 

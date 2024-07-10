@@ -9,7 +9,7 @@ import Blog from "./pages/Blog";
 import GetStarted from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Create from "./pages/Create";
-
+import UserProfile from "./pages/UserProfile";
 function App() {
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
             <Route path="/Create" element={<Create />} />
             <Route path="/GetStarted" element={<GetStarted />} /> 
             <Route path="/SignIn" element={<SignIn />} />  {/* Add SignIn component here */}
-         
+            <Route path="/UserProfile" element={<UserProfile />} /> 
           </Routes>
           <Footer />
         </BrowserRouter>
