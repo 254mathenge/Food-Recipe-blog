@@ -228,21 +228,29 @@ router.patch("/:id", authenticateUser, async (req, res) => {
   }
 });
 
-router.delete("/:id", authenticateUser, async (req, res) => {
-  const id = req.params.id;
+router.delete("/:authorId/:blogid", authenticateUser, async (req, res) => {
+  const user = req.user;
+  const authorId = user.userid;
+  const blogid = req.params.blogid;
+  console.log("Attempting to delete blog:", {authorId });
   try {
+
     const deleteBlog = await prisma.blog.delete({
       where: {
-        blogid: id,
+        blogid: blogid,
       },
       select: {
-        title: true,
-        content: true,
-        createdAt: true,
+                title: true,
+                content: true,
+               createdAt: true,
         authorId: true,
-      },
+        blogid:true,
+        author: true
+              },
+      
     });
-    res.status(200).json(deleteBlog);
+console.log(deleteBlog)
+    res.status(200).json("delete successful");
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

@@ -13,6 +13,7 @@ function CreateBlog() {
     console.log("submitting");
     setLoading(true);
     setError("");
+    
 
     const token = localStorage.getItem("token");
     try {
@@ -90,7 +91,7 @@ function CreateBlog() {
             <p className="error">{formik.errors.content}</p>
           )}
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" >
           {loading ? "Creating..." : "Create Blog"}
         </button>
       </form>
